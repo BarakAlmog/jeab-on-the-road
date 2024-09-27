@@ -1,12 +1,13 @@
 let articles = []
 
 const ARTICLES_URL =
-  'https://gist.githubusercontent.com/BarakAlmog/97a0a07608e11deb54719a394bc0a74c/raw/171427b8f5c7ba82645cd6f39271a8fa2312e9f5/articles.json'
+  'https://gist.githubusercontent.com/BarakAlmog/97a0a07608e11deb54719a394bc0a74c/raw'
 
 async function loadArticles() {
   try {
     const response = await fetch(ARTICLES_URL)
     articles = await response.json()
+    console.log(articles)
     displayArticleGrid()
   } catch (error) {
     console.error('Error loading articles:', error)
